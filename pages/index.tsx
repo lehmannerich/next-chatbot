@@ -16,7 +16,7 @@ function scrollToBottom() {
 
 function Home() {
   return (
-    <div className="bg-amber-50 min-h-screen">
+    <div className="bg-amber-50">
       <Chat scrollToBottom={scrollToBottom} />
     </div>
   );
