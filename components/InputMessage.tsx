@@ -2,7 +2,7 @@ import { Button } from "./Button";
 
 export default function InputMessage({ input, setInput, sendMessage }: any) {
   return (
-    <div className="p-2 lg:fixed lg:bottom-0 w-full bg-stone-100 max-w-[720px] mx-auto md:bg-transparent md:mb-6">
+    <div className="p-2 fixed bottom-0 w-full bg-stone-100 max-w-[720px] mx-auto md:bg-transparent md:mb-6">
       <div className="flex clear-both md:shadow-lg md:shadow-white">
         <input
           type="text"
