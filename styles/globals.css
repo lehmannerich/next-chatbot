@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add this to your styles.css or a new CSS file */
+.cover {
+    @apply bg-gradient-to-r bg-no-repeat shadow-md mx-auto rounded-md w-36 h-48 bg-cover;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.319) 3px, rgba(255, 255, 255, 0.5) 5px, rgba(255, 255, 255, 0.25) 7px, rgba(255, 255, 255, 0.25) 10px, transparent 12px, transparent 16px, rgba(255, 255, 255, 0.25) 17px, transparent 22px);
+  }
