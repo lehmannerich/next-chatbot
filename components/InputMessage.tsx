@@ -32,7 +32,7 @@ export default function InputMessage({ input, setInput, sendMessage }: any) {
           Send
         </Button>
       </div>
-      <div className="h-4"></div>
+      <div className="h-8"></div>
     </div>
   );
 }
