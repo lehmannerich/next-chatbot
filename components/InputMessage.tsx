@@ -14,8 +14,6 @@ export default function InputMessage({ input, setInput, sendMessage }: any) {
             if (e.key === "Enter") {
               sendMessage(input);
               setInput("");
-              // focus on input
-              e.currentTarget.focus();
             }
           }}
           onChange={(e) => {
@@ -28,11 +26,6 @@ export default function InputMessage({ input, setInput, sendMessage }: any) {
           onClick={() => {
             sendMessage(input);
             setInput("");
-            // focus input
-            const inputElement = document.querySelector("input");
-            if (inputElement) {
-              inputElement.focus();
-            }
           }}
         >
           Send
