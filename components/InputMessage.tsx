@@ -2,7 +2,7 @@ import { Button } from "./Button";
 
 export default function InputMessage({ input, setInput, sendMessage }: any) {
   return (
-    <div className="px-4 md:fixed md:bottom-0 w-full bg-white max-w-[720px] mx-auto md:bg-transparent md:mb-6">
+    <div className="px-4 md:fixed md:bottom-0 w-full bg-white max-w-[720px] mx-auto md:bg-transparent">
       <div className="flex clear-both md:shadow-lg md:shadow-white">
         <input
           type="text"
@@ -38,6 +38,7 @@ export default function InputMessage({ input, setInput, sendMessage }: any) {
           Send
         </Button>
       </div>
+      <div className="h-6"></div>
     </div>
   );
 }

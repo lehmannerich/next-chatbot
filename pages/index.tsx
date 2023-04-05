@@ -8,10 +8,14 @@ function scrollToBottom() {
   }
   isScrolling = true;
   const element = document.body;
+  const isMobile = window.innerWidth < 768;
   element.scrollIntoView({ behavior: "smooth", block: "end" });
-  setTimeout(() => {
-    isScrolling = false;
-  }, 190);
+  setTimeout(
+    () => {
+      isScrolling = false;
+    },
+    isMobile ? 100 : 190
+  );
 }
 
 function Home() {
