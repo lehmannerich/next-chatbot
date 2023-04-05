@@ -14,7 +14,7 @@ function scrollToBottom() {
     () => {
       isScrolling = false;
     },
-    isMobile ? 60 : 190
+    isMobile ? 120 : 190
   );
 }
 
