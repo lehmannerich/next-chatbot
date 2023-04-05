@@ -102,7 +102,12 @@ export function Chat({ scrollToBottom }: { scrollToBottom: () => void }) {
         </div>
       </div>
 
-      <InputMessage input={input} setInput={setInput} sendMessage={sendMessage} />
+      <InputMessage
+        input={input}
+        setInput={setInput}
+        sendMessage={sendMessage}
+        scrollToBottom={scrollToBottom}
+      />
     </div>
   );
 }
