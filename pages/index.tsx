@@ -1,4 +1,5 @@
 import { Chat } from "../components/Chat";
+import { Navbar } from "../components/Navbar";
 
 let isScrolling = false;
 
@@ -21,6 +22,7 @@ function scrollToBottom() {
 function Home() {
   return (
     <div className="">
+      <Navbar />
       <Chat scrollToBottom={scrollToBottom} />
     </div>
   );

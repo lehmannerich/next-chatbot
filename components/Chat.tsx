@@ -89,8 +89,8 @@ export function Chat({ scrollToBottom }: { scrollToBottom: () => void }) {
   };
 
   return (
-    <div className={`max-w-[720px]  mx-auto`}>
-      <div className="rounded-2xl border-stone-100 p-4 pb-16 md:pt-14">
+    <div className={`max-w-[720px]  mx-auto overflow-y-scroll`}>
+      <div className="rounded-2xl border-stone-100 p-4 pb-16 pt-20">
         {messages.map(({ content, role }, index) => (
           <ChatLine key={index} role={role} content={content} />
         ))}
