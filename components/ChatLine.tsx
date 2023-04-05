@@ -1,8 +1,7 @@
+import { ChatGPTMessage } from "@/utils/types";
 import clsx from "clsx";
+const ASSISTANT_NAME = "Bank Robber";
 
-const ASSISTANT_NAME = "Bank Robber"; // name of the assistant
-
-// loading placeholder animation for the chat line
 export const LoadingChatLine = () => (
   <div className="flex min-w-full animate-pulse py-4 px-3">
     <div className="flex flex-col gap-2 w-full">
@@ -14,7 +13,7 @@ export const LoadingChatLine = () => (
   </div>
 );
 
-export function ChatLine({ role = "assistant", content }: any) {
+export function ChatLine({ role, content }: ChatGPTMessage) {
   if (!content) {
     return null;
   }
