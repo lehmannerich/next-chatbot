@@ -25,7 +25,7 @@ function debounce(func: Function, wait: number): Function {
   };
 }
 
-const debouncedScrollToBottom = debounce(scrollToBottom, 80);
+const debouncedScrollToBottom = debounce(scrollToBottom, 120);
 
 function Home() {
   return (
