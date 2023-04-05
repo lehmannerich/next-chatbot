@@ -24,13 +24,15 @@ export default function InputMessage({
           onChange={(e) => {
             setInput(e.target.value);
           }}
-          onFocus={async () => {
-            setTimeout(() => {}, 100);
-            setViewHeight(window.innerHeight);
+          onFocus={() => {
+            setTimeout(() => {
+              setViewHeight(window.innerHeight);
+            }, 1000);
           }}
-          onBlur={async () => {
-            setTimeout(() => {}, 100);
-            setViewHeight(window.innerHeight);
+          onBlur={() => {
+            setTimeout(() => {
+              setViewHeight(window.innerHeight);
+            }, 1000);
           }}
         />
         <Button
