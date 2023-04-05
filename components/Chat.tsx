@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
-import { ChatLine, LoadingChatLine, type ChatGPTMessage } from "./ChatLine";
+import { ChatGPTMessage } from "../utils/types";
+import { ChatLine, LoadingChatLine } from "./ChatLine";
 import InputMessage from "./InputMessage";
 
 const COOKIE_NAME = "ai-assistant-bot-user";
