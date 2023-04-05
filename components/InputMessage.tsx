@@ -28,6 +28,9 @@ export default function InputMessage({
           onFocus={() => {
             setViewHeight(window.innerHeight);
           }}
+          onBlur={() => {
+            setViewHeight(window.innerHeight);
+          }}
         />
         <Button
           type="submit"
