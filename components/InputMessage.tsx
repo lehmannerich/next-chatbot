@@ -30,7 +30,10 @@ export default function InputMessage({
           }}
           onFocus={() => {
             if (window.innerWidth < 768) {
-              scrollToBottom();
+              // wait for a second to allow the keyboard to show
+              setTimeout(() => {
+                scrollToBottom();
+              }, 1000);
             }
           }}
         />
