@@ -14,7 +14,7 @@ export const initialMessages: ChatGPTMessage[] = [
   },
 ];
 
-export function Chat({ scrollToBottom }: { scrollToBottom: () => void }) {
+export function Chat({ scrollToBottom }: any) {
   const [messages, setMessages] = useState<ChatGPTMessage[]>(initialMessages);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);

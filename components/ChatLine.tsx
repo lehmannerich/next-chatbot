@@ -9,8 +9,13 @@ export interface ChatGPTMessage {
 
 // loading placeholder animation for the chat line
 export const LoadingChatLine = () => (
-  <div className="flex min-w-full animate-pulse px-2 py-5 sm:px-6">
-    <p className="text-zinc-500 font-medium text-xs">Assistant typing...</p>
+  <div className="flex min-w-full animate-pulse py-4 px-3">
+    <div className="flex flex-col gap-2 w-full">
+      <p className="text-zinc-500 font-medium text-xs">Assistant typing...</p>
+      {[...Array(3)].map((_, i) => (
+        <p key={i} className="w-full h-2 bg-slate-100 animate-pulse rounded-full"></p>
+      ))}
+    </div>
   </div>
 );
 
