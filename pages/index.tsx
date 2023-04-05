@@ -7,14 +7,14 @@ function scrollToBottom() {
     return;
   }
   isScrolling = true;
-  const element = document.body;
   const isMobile = window.innerWidth < 768;
-  element.scrollIntoView({ behavior: "smooth", block: "end" });
+  const element = document.body;
+  element.scrollIntoView({ behavior: isMobile ? "auto" : "smooth", block: "end" });
   setTimeout(
     () => {
       isScrolling = false;
     },
-    isMobile ? 100 : 190
+    isMobile ? 10 : 190
   );
 }
 
