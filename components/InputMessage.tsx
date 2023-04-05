@@ -1,11 +1,6 @@
 import { Button } from "./Button";
 
-export default function InputMessage({
-  input,
-  setInput,
-  sendMessage,
-  scrollToBottom,
-}: any) {
+export default function InputMessage({ input, setInput, sendMessage }: any) {
   return (
     <div className="px-4 fixed bottom-0 w-full bg-stone-100 pt-4 md:pt-0 md:bg-white max-w-[720px] mx-auto md:bg-transparent">
       <div className="flex clear-both md:shadow-lg md:shadow-white">

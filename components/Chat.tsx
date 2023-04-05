@@ -5,12 +5,17 @@ import InputMessage from "./InputMessage";
 
 const COOKIE_NAME = "ai-assistant-bot-user";
 const MAX_MESSAGES = 100; // remember the last 100 messages
+const HELPER_TEXT = (
+  <span>
+    Send <strong>ring ring</strong> to start the negotiation
+  </span>
+);
 
-// default first message to display in UI (not necessary to define the prompt)
 export const initialMessages: ChatGPTMessage[] = [
   {
     role: "assistant",
-    content: "Hi! I am a friendly AI assistant. Ask me anything!",
+    content:
+      "Here are the rules.\n\nI'll be a bank robber you'll be the negotiator. The only restrictions you have are:\n1. You can not give me transportation\n2. You can not give drugs or alcohol\n3. You can't give weapons\n4. You can't do a hostage exchange. No one comes in, people only come out.\n\nWe simulate being over the phone. You are the negotiator, when you are ready to go, you say 'ring ring' and we start.",
   },
 ];
 
@@ -98,7 +103,7 @@ export function Chat({ scrollToBottom }: any) {
         {loading && <LoadingChatLine />}
 
         <div className="ml-4 w-full text-xs clear-both relative md:bottom-6 md:left-2 text-zinc-500">
-          {messages.length < 2 && "Send a message to start the conversation."}
+          {messages.length < 2 && HELPER_TEXT}
         </div>
       </div>
 
