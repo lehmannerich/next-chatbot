@@ -13,7 +13,6 @@ export default function InputMessage({
           type="text"
           aria-label="chat input"
           placeholder="Send a message..."
-          required
           className="md:text-lg py-2 md:py-3 min-w-0 flex-auto appearance-none rounded border border-stone-300 px-3 md:shadow-lg shadow-stone-800/5 placeholder:text-stone-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10"
           value={input}
           onKeyDown={(e) => {
@@ -26,9 +25,11 @@ export default function InputMessage({
             setInput(e.target.value);
           }}
           onFocus={() => {
+            setTimeout(() => {}, 100);
             setViewHeight(window.innerHeight);
           }}
           onBlur={() => {
+            setTimeout(() => {}, 100);
             setViewHeight(window.innerHeight);
           }}
         />
