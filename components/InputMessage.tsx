@@ -1,13 +1,8 @@
 import { Button } from "./Button";
 
-export default function InputMessage({
-  input,
-  setInput,
-  sendMessage,
-  setViewHeight,
-}: any) {
+export default function InputMessage({ input, setInput, sendMessage }: any) {
   return (
-    <div className="p-2 md:fixed md:bottom-0 w-full bg-stone-100 max-w-[720px] mx-auto md:bg-transparent md:mb-6">
+    <div className="px-4 md:fixed md:bottom-0 w-full bg-white max-w-[720px] mx-auto md:bg-transparent md:mb-6">
       <div className="flex clear-both md:shadow-lg md:shadow-white">
         <input
           type="text"
@@ -25,16 +20,6 @@ export default function InputMessage({
           }}
           onChange={(e) => {
             setInput(e.target.value);
-          }}
-          onFocus={() => {
-            setTimeout(() => {
-              setViewHeight(window.innerHeight);
-            }, 1000);
-          }}
-          onBlur={() => {
-            setTimeout(() => {
-              setViewHeight(window.innerHeight);
-            }, 1000);
           }}
         />
         <Button
