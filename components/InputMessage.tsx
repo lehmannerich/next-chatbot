@@ -24,11 +24,11 @@ export default function InputMessage({
           onChange={(e) => {
             setInput(e.target.value);
           }}
-          onFocus={() => {
+          onFocus={async () => {
             setTimeout(() => {}, 100);
             setViewHeight(window.innerHeight);
           }}
-          onBlur={() => {
+          onBlur={async () => {
             setTimeout(() => {}, 100);
             setViewHeight(window.innerHeight);
           }}
