@@ -7,7 +7,7 @@ const COOKIE_NAME = "ai-assistant-bot-user";
 const MAX_MESSAGES = 100; // remember the last 100 messages
 const HELPER_TEXT = (
   <span>
-    Send <strong>ring ring</strong> to start the negotiation
+    Send <strong>ring ring</strong> to start the negotiation.
   </span>
 );
 
@@ -15,7 +15,7 @@ export const initialMessages: ChatGPTMessage[] = [
   {
     role: "assistant",
     content:
-      "Here are the rules.\n\nI'll be a bank robber you'll be the negotiator. The only restrictions you have are:\n1. You can not give me transportation\n2. You can not give drugs or alcohol\n3. You can't give weapons\n4. You can't do a hostage exchange. No one comes in, people only come out.\n\nWe simulate being over the phone. You are the negotiator, when you are ready to go, you say 'ring ring' and we start.",
+      "Scenario:\nI'm a bank robber you're the negotiator. I'm in the bank with hostages. Your goal is to get the hostages out. \n\nRules:\n1. You can't give me transportation\n2. You can't give weapons\n3. You can't do a hostage exchange. (No one comes in, people only come out.)\n\nWe simulate being over the phone. When you are ready to go, you say 'ring ring' and we start.",
   },
 ];
 
