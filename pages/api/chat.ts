@@ -1,4 +1,3 @@
-import { type ChatGPTMessage } from '../../components/ChatLine'
 import { OpenAIStream, OpenAIStreamPayload } from '../../utils/OpenAIStream'
 import init from '../../utils/messages-init'
 // break the app if the API key is missing
@@ -15,9 +14,9 @@ const MODEL = 'gpt-4'
 
 const handler = async (req: Request): Promise<Response> => {
   const body = await req.json()
-  console.log(init[0]);
 
-  const messages: ChatGPTMessage[] = init
+  // Quick fix: @TODO improve this
+  const messages: any = init
   messages.push(...body?.messages)
 
   const payload: OpenAIStreamPayload = {
