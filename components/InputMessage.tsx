@@ -12,7 +12,10 @@ export default function InputMessage({ input, setInput, sendMessage }: any) {
           value={input}
           onKeyDown={(e) => {
             if (e.key === "Enter") {
-              e.currentTarget.blur();
+              // if on mobile, blur the input to hide the keyboard
+              if (window.innerWidth < 768) {
+                e.currentTarget.blur();
+              }
               sendMessage(input);
               setInput("");
             }
