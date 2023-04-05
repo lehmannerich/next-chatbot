@@ -28,14 +28,6 @@ export default function InputMessage({
           onChange={(e) => {
             setInput(e.target.value);
           }}
-          onFocus={() => {
-            if (window.innerWidth < 768) {
-              // wait for a second to allow the keyboard to show
-              setTimeout(() => {
-                scrollToBottom();
-              }, 1000);
-            }
-          }}
         />
         <Button
           type="submit"
