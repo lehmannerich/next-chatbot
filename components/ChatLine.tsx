@@ -1,5 +1,4 @@
 import clsx from "clsx";
-import { ChatGPTMessage } from "../utils/types";
 
 const ASSISTANT_NAME = "Bank Robber"; // name of the assistant
 
@@ -15,11 +14,10 @@ export const LoadingChatLine = () => (
   </div>
 );
 
-export function ChatLine({ role = "assistant", content }: ChatGPTMessage) {
+export function ChatLine({ role = "assistant", content }: any) {
   if (!content) {
     return null;
   }
-  const formattedMessage = content;
 
   return (
     <div
@@ -29,7 +27,7 @@ export function ChatLine({ role = "assistant", content }: ChatGPTMessage) {
         <p className="text-zinc-500 font-medium mb-1 text-xs">
           {role == "assistant" ? ASSISTANT_NAME : "You"}
         </p>
-        <p className={clsx("text ", role == "assistant" ? "" : "")}>{formattedMessage}</p>
+        <p className={clsx("text ", role == "assistant" ? "" : "")}>{content}</p>
       </div>
     </div>
   );
