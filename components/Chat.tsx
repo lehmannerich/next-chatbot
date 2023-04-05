@@ -19,6 +19,11 @@ export function Chat({ scrollToBottom }: { scrollToBottom: () => void }) {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [cookie, setCookie] = useCookies([COOKIE_NAME]);
+  const [viewHeight, setViewHeight] = useState(0);
+
+  useEffect(() => {
+    setViewHeight(window.innerHeight);
+  }, []);
 
   useEffect(() => {
     if (!cookie[COOKIE_NAME]) {
@@ -101,7 +106,14 @@ export function Chat({ scrollToBottom }: { scrollToBottom: () => void }) {
           {messages.length < 2 && "Send a message to start the conversation."}
         </div>
       </div>
-      <InputMessage input={input} setInput={setInput} sendMessage={sendMessage} />
+      <div className="text-center">Current Viewheight: {viewHeight}</div>
+
+      <InputMessage
+        input={input}
+        setInput={setInput}
+        sendMessage={sendMessage}
+        setViewHeight={setViewHeight}
+      />
     </div>
   );
 }

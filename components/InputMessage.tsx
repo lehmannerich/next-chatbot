@@ -1,6 +1,11 @@
 import { Button } from "./Button";
 
-export default function InputMessage({ input, setInput, sendMessage }: any) {
+export default function InputMessage({
+  input,
+  setInput,
+  sendMessage,
+  setViewHeight,
+}: any) {
   return (
     <div className="p-2 fixed bottom-0 w-full bg-stone-100 max-w-[720px] mx-auto md:bg-transparent md:mb-6">
       <div className="flex clear-both md:shadow-lg md:shadow-white">
@@ -19,6 +24,9 @@ export default function InputMessage({ input, setInput, sendMessage }: any) {
           }}
           onChange={(e) => {
             setInput(e.target.value);
+          }}
+          onFocus={() => {
+            setViewHeight(window.innerHeight);
           }}
         />
         <Button
