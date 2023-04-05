@@ -9,7 +9,7 @@ function scrollToBottom(): void {
   }
   isScrolling = true;
   const element: HTMLElement = document.body;
-  element.scrollIntoView({ behavior: "auto", block: "end" });
+  element.scrollIntoView({ behavior: "smooth", block: "end" });
   isScrolling = false;
 }
 
@@ -25,7 +25,7 @@ function debounce(func: Function, wait: number): Function {
   };
 }
 
-const debouncedScrollToBottom = debounce(scrollToBottom, 60);
+const debouncedScrollToBottom = debounce(scrollToBottom, 80);
 
 function Home() {
   return (
