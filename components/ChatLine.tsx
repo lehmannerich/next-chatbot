@@ -1,11 +1,5 @@
 import clsx from "clsx";
-
-type ChatGPTAgent = "user" | "system" | "assistant";
-
-export interface ChatGPTMessage {
-  role: ChatGPTAgent;
-  content: string;
-}
+import { ChatGPTMessage } from "../utils/types";
 
 const ASSISTANT_NAME = "Bank Robber"; // name of the assistant
 

@@ -1,4 +1,6 @@
-const init = [
+import { Message } from "../utils/types";
+
+const init: Message[] = [
   {
     role: "system",
     content:
@@ -336,11 +338,6 @@ const init = [
   {
     role: "user",
     content: "Thank you for the feedback! Let's play again.",
-  },
-  {
-    role: "assistant",
-    content:
-      "Ok, let's start the game.\n\nI'll be a bank robber you'll be the negotiator. The only restrictions you have are:\n1. You can not give the robber transportation\n2. You can not give drugs or alcohol\n3. You can't give weapons\n4. You can't do a hostage exchange. No one comes in, people only come out.\n\nWe simulate being over the phone. You are the negotiator, when you are ready to go, you say 'ring ring' and we start.",
   },
 ];
 
