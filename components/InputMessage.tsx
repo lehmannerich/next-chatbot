@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Button } from "./Button";
 
-export default function InputMessage({ input, setInput, sendMessage }: any) {
+export default function InputMessage({ input, setInput, sendMessage, tokenCount }: any) {
   useEffect(() => {
     // if NOT on mobile, focus the input to show the keyboard
     if (window.innerWidth >= 768) {
@@ -45,6 +45,17 @@ export default function InputMessage({ input, setInput, sendMessage }: any) {
         >
           Send
         </Button>
+      </div>
+      <div className="text-xs mt-2 ml-3 text-zinc-500 font-medium">
+        {tokenCount} token spent with GPT-4 ({" "}
+        <a
+          href="https://www.buymeacoffee.com/lehmannerich"
+          className="underline hover:text-black"
+          target="_blanc"
+        >
+          ~ ${((tokenCount / 1000) * 0.06).toFixed(2)}
+        </a>{" "}
+        )
       </div>
       <div className="h-8"></div>
     </div>

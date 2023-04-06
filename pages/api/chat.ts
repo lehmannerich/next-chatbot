@@ -17,10 +17,6 @@ const handler = async (req: Request): Promise<Response> => {
   const messages: Message[] = init
   messages.push(...body?.messages)
 
-  console.log("Calling:");
-  console.log(messages);
-
-
   const payload: OpenAIStreamPayload = {
     model: MODEL,
     messages: messages,

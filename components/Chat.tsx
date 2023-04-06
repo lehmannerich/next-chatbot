@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
-import { ChatGPTMessage } from "../utils/types";
+import init from "../utils/messages-init";
+import { ChatGPTMessage, Message } from "../utils/types";
 import { ChatLine, LoadingChatLine } from "./ChatLine";
 import InputMessage from "./InputMessage";
 
@@ -20,11 +21,17 @@ export const initialMessages: ChatGPTMessage[] = [
   },
 ];
 
+const init_messages: Message[] = init;
+const count_init_messages = init_messages.reduce((acc, text) => {
+  return acc + text.content.length;
+}, 0);
+
 export function Chat({ scrollToBottom }: any) {
   const [messages, setMessages] = useState<ChatGPTMessage[]>(initialMessages);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [cookie, setCookie] = useCookies([COOKIE_NAME]);
+  const [tokenCount, setTokenCount] = useState(0);
 
   useEffect(() => {
     if (!cookie[COOKIE_NAME]) {
@@ -46,6 +53,17 @@ export function Chat({ scrollToBottom }: any) {
       { role: "user", content: message } as ChatGPTMessage,
     ];
     setMessages(newMessages);
+
+    // count the number of characters in the newMessages array
+    const characterCount = newMessages.reduce((acc, text) => {
+      console.log("========================");
+      console.log(text.content);
+      return acc + text.content.length;
+    }, 0);
+
+    // 1 token = 4 characters
+    const tokenCount = Math.ceil((characterCount + count_init_messages) / 3.2);
+    setTokenCount((prev) => prev + tokenCount);
 
     const lastMessages = newMessages.slice(-MAX_MESSAGES);
 
@@ -96,7 +114,7 @@ export function Chat({ scrollToBottom }: any) {
 
   return (
     <div className={`max-w-[720px]  mx-auto`}>
-      <div className="rounded-2xl border-stone-100 p-4 pb-20 pt-20">
+      <div className="rounded-2xl border-stone-100 p-4 pb-28 pt-20">
         {messages.map(({ content, role }, index) => (
           <ChatLine key={index} role={role} content={content} />
         ))}
@@ -113,6 +131,7 @@ export function Chat({ scrollToBottom }: any) {
         setInput={setInput}
         sendMessage={sendMessage}
         scrollToBottom={scrollToBottom}
+        tokenCount={tokenCount}
       />
     </div>
   );
