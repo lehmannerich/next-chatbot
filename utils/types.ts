@@ -10,5 +10,5 @@ export interface ChatGPTMessage {
   content: string;
 }
 
-export const MODEL: string = "gpt-3.5-turbo";
-// export const MODEL: string = "gpt-4";
+// export const MODEL: string = "gpt-3.5-turbo";
+export const MODEL: string = "gpt-4";
