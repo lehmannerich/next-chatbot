@@ -50,7 +50,7 @@ export default function InputMessage({ input, setInput, sendMessage, tokenCount 
           Send
         </Button>
       </div>
-      <div className="text-xs mt-2 ml-3 text-zinc-500 font-medium">
+      <div className="text-xs mt-2 ml-3 text-zinc-500 font-medium invisible">
         {tokenCount} token spent with GPT-4 ({" "}
         <a
           href="https://www.buymeacoffee.com/lehmannerich"
