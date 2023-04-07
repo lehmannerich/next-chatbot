@@ -15,7 +15,7 @@ export default function InputMessage({ input, setInput, sendMessage, tokenCount 
   return (
     <div className="px-4 fixed bottom-0 w-full bg-stone-100 pt-4 md:pt-0 md:bg-white max-w-[720px] mx-auto md:bg-transparent">
       <div className="flex clear-both md:shadow-lg md:shadow-white bg-rose-50 rounded p-4 text-rose-500 font-mono">
-        OpenAI API limit reached: Sorry, this demo doesn't work anymore.
+        OpenAI API limit reached: this means the demo does not work anymore.
       </div>
       <div className="flex clear-both md:shadow-lg md:shadow-white invisible">
         <input
