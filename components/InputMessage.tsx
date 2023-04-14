@@ -12,7 +12,7 @@ export default function InputMessage({ input, setInput, sendMessage, tokenCount 
     }
   }, []);
 
-  const isOn = true;
+  const isOn = false;
 
   return (
     <div className="px-4 fixed bottom-0 w-full bg-stone-100 pt-4 md:pt-0 md:bg-white max-w-[720px] mx-auto md:bg-transparent">
